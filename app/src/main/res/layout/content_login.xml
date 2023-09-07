@@ -5,7 +5,9 @@
     tools:showIn="@layout/activity_login">
 
     <data>
-
+        <variable
+            name="vm"
+            type="com.example.chatapp.ui.login.LoginViewModel" />
     </data>
 
 
@@ -36,6 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxBackgroundColor="@color/transparent"
+                app:Error="@{vm.emailError}"
 
                 >
 
@@ -43,6 +46,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
+                    android:text="@={vm.email}"
 
                     />
             </com.google.android.material.textfield.TextInputLayout>
@@ -52,13 +56,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxBackgroundColor="@color/transparent"
-
+                app:Error="@{vm.passwordError}"
                 >
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Password" />
+                    android:hint="Password"
+                    android:text="@={vm.password}"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -66,7 +71,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingVertical="8dp"
-                android:text="LOGIN" />
+                android:text="LOGIN"
+                android:backgroundTint="@color/blue"
+                android:onClick="@{()-> vm.login()}"/>
 
             <TextView
                 android:layout_width="wrap_content"

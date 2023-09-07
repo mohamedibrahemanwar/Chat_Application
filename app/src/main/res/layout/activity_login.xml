@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="vm"
+            type="com.example.chatapp.ui.login.LoginViewModel" />
 
     </data>
 
@@ -52,7 +55,9 @@
 
 <include
     android:id="@+id/content"
-    layout="@layout/content_login"/>
+    layout="@layout/content_login"
+    app:vm="@{vm}"
+    />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
